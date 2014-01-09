@@ -21,7 +21,7 @@
 		EDD2068EC7B4DBA33B5679FD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDD20059FD7959B1D9120342 /* CoreGraphics.framework */; };
 		EDD20809E7AA444371E5DD7B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDD204DE4FCE55B63B542A8B /* ViewController.m */; };
 		EDD209C76F761649773F4061 /* X3.png in Resources */ = {isa = PBXBuildFile; fileRef = EDD203D2A759CE1E74D60509 /* X3.png */; };
-		EDD209DD4902FDC84DC16114 /* tic_tac_toe_board.png in Resources */ = {isa = PBXBuildFile; fileRef = EDD20314B75CF8F0B336CA28 /* tic_tac_toe_board.png */; };
+		EDD209DD4902FDC84DC16114 /* board.png in Resources */ = {isa = PBXBuildFile; fileRef = EDD20314B75CF8F0B336CA28 /* board.png */; };
 		EDD209E9BFCAAA71FE733F99 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDD202AE8A7269F3074920D1 /* Main_iPhone.storyboard */; };
 		EDD20DBF13F40919003A90D8 /* O2.png in Resources */ = {isa = PBXBuildFile; fileRef = EDD20DA675CA643F033D6350 /* O2.png */; };
 		EDD20E2243E23B67CBF0F28B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDD20686D5ED7E0FA82498C7 /* XCTest.framework */; };
@@ -46,7 +46,7 @@
 		EDD20076536EA1F2C48F2463 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EDD201CC19FCD8F05F675B68 /* TicTacToe-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TicTacToe-Prefix.pch"; sourceTree = "<group>"; };
 		EDD20218C610A33B4872D4EB /* TicTacToeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "TicTacToeTests-Info.plist"; sourceTree = "<group>"; };
-		EDD20314B75CF8F0B336CA28 /* tic_tac_toe_board.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tic_tac_toe_board.png; sourceTree = "<group>"; };
+		EDD20314B75CF8F0B336CA28 /* board.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = board.png; sourceTree = "<group>"; };
 		EDD203D2A759CE1E74D60509 /* X3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = X3.png; sourceTree = "<group>"; };
 		EDD204CBF6BF99CD48A4DE69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		EDD204DE4FCE55B63B542A8B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 			children = (
 				EDD20F0389BFBD7626B0A20F /* X1.png */,
 				EDD207255CF8B334ABAC80BC /* O3.png */,
-				EDD20314B75CF8F0B336CA28 /* tic_tac_toe_board.png */,
+				EDD20314B75CF8F0B336CA28 /* board.png */,
 				EDD206A3D52AB5B93D54206D /* O1.png */,
 				EDD20AFEF6382BA71D0481D9 /* X2.png */,
 				EDD203D2A759CE1E74D60509 /* X3.png */,
@@ -267,7 +267,7 @@
 				EDD20575B4C9FDDDE046D407 /* Main_iPad.storyboard in Resources */,
 				EDD204B7D2B40687D5B12500 /* X1.png in Resources */,
 				EDD201A08BA2E6EC624A091E /* O3.png in Resources */,
-				EDD209DD4902FDC84DC16114 /* tic_tac_toe_board.png in Resources */,
+				EDD209DD4902FDC84DC16114 /* board.png in Resources */,
 				EDD20E456CA61265C04403FA /* O1.png in Resources */,
 				EDD20424FDBA54A29A6C65AE /* X2.png in Resources */,
 				EDD209C76F761649773F4061 /* X3.png in Resources */,
