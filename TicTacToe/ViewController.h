@@ -1,13 +1,21 @@
-//
-//  ViewController.h
-//  TicTacToe
-//
-//  Created by Brian C. Brazil on 1/9/14.
-//  Copyright (c) 2014 none. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@class Square;
+
+@interface ViewController : UIViewController <UIAlertViewDelegate>
+
+
+@property (weak, nonatomic) IBOutlet Square* square_0_0;
+@property (weak, nonatomic) IBOutlet Square* square_0_1;
+@property (weak, nonatomic) IBOutlet Square* square_0_2;
+
+@property (weak, nonatomic) IBOutlet Square* square_1_0;
+@property (weak, nonatomic) IBOutlet Square* square_1_1;
+@property (weak, nonatomic) IBOutlet Square* square_1_2;
+
+@property (weak, nonatomic) IBOutlet Square* square_2_0;
+@property (weak, nonatomic) IBOutlet Square* square_2_1;
+@property (weak, nonatomic) IBOutlet Square* square_2_2;
+
 
 @end
