@@ -25,6 +25,7 @@
 		EDD209DD4902FDC84DC16114 /* board.png in Resources */ = {isa = PBXBuildFile; fileRef = EDD20314B75CF8F0B336CA28 /* board.png */; };
 		EDD209E9BFCAAA71FE733F99 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDD202AE8A7269F3074920D1 /* Main_iPhone.storyboard */; };
 		EDD20AB855ED5C042EDF1571 /* Grid.m in Sources */ = {isa = PBXBuildFile; fileRef = EDD202D8A366647A40BEBD75 /* Grid.m */; };
+		EDD20C146060D38DE2BD34DD /* GameLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = EDD20BE8E02E95F56054C8F6 /* GameLogic.m */; };
 		EDD20DBF13F40919003A90D8 /* O2.png in Resources */ = {isa = PBXBuildFile; fileRef = EDD20DA675CA643F033D6350 /* O2.png */; };
 		EDD20E2243E23B67CBF0F28B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDD20686D5ED7E0FA82498C7 /* XCTest.framework */; };
 		EDD20E456CA61265C04403FA /* O1.png in Resources */ = {isa = PBXBuildFile; fileRef = EDD206A3D52AB5B93D54206D /* O1.png */; };
@@ -47,6 +48,7 @@
 		EDD20059FD7959B1D9120342 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		EDD20076536EA1F2C48F2463 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EDD201CC19FCD8F05F675B68 /* TicTacToe-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TicTacToe-Prefix.pch"; sourceTree = "<group>"; };
+		EDD201DB135E30020CF121C6 /* GameLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLogic.h; sourceTree = "<group>"; };
 		EDD20218C610A33B4872D4EB /* TicTacToeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "TicTacToeTests-Info.plist"; sourceTree = "<group>"; };
 		EDD202D8A366647A40BEBD75 /* Grid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Grid.m; sourceTree = "<group>"; };
 		EDD20314B75CF8F0B336CA28 /* board.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = board.png; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 		EDD20B5A13911EF71CF9F5A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EDD20B7EB891853CC4A4D8F8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		EDD20B8E022752B4F7EAF2B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EDD20BE8E02E95F56054C8F6 /* GameLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLogic.m; sourceTree = "<group>"; };
 		EDD20C0DE4094FBD1ABABC4D /* Square.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Square.m; sourceTree = "<group>"; };
 		EDD20DA55680B1FAE20FC8EE /* TicTacToe-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = "TicTacToe-Info.plist"; sourceTree = "<group>"; };
 		EDD20DA675CA643F033D6350 /* O2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = O2.png; sourceTree = "<group>"; };
@@ -152,6 +155,8 @@
 				EDD20DB5802664029E241077 /* Square.h */,
 				EDD202D8A366647A40BEBD75 /* Grid.m */,
 				EDD20A212868A7C7945C8040 /* Grid.h */,
+				EDD20BE8E02E95F56054C8F6 /* GameLogic.m */,
+				EDD201DB135E30020CF121C6 /* GameLogic.h */,
 			);
 			path = TicTacToe;
 			sourceTree = "<group>";
@@ -297,6 +302,7 @@
 				EDD20809E7AA444371E5DD7B /* ViewController.m in Sources */,
 				EDD2030C6735C95A7CCE3BAF /* Square.m in Sources */,
 				EDD20AB855ED5C042EDF1571 /* Grid.m in Sources */,
+				EDD20C146060D38DE2BD34DD /* GameLogic.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
