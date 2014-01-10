@@ -42,7 +42,7 @@
 
 - (void)declareWinnerOnSquares:(NSArray*)winningSquares {
     for (Square* square in winningSquares) {
-        square.backgroundColor = UIColor.blueColor;
+        square.backgroundColor = [UIColor colorWithRed:0.0 green:0.5 blue:1.0 alpha:0.7];
     }
     [[[UIAlertView alloc] initWithTitle:nil message:@"Winner!" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Play Again", nil] show];
 }
