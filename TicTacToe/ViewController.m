@@ -37,14 +37,10 @@
 
 - (IBAction)squareSelected:(Square*)sender {
     sender.value = X;
-    NSArray* winner = [self findWinner];
-    if (winner != nil) [self declareWinner:winner];
+    if ([self findWinner] != nil) [self declareWinner:[self findWinner]];
     else if (![self hasEmptySquares]) [self declareDraw];
-    else {
-        [self chooseSquare].value = O;
-        winner = [self findWinner];
-        if (winner != nil) [self declareWinner:winner];
-    }
+    else [self chooseSquare].value = O;
+    if ([self findWinner] != nil) [self declareWinner:[self findWinner]];
 }
 
 #pragma mark Find Winner
@@ -60,8 +56,7 @@
 
 - (NSArray*)findWinnerOnRow {
     for (int x = 0; x < _grid.size; x++) {
-        NSMutableArray* row = [[NSMutableArray alloc] init];
-        for (int y = 0; y < _grid.size; y++) [row addObject:[_grid squareForX:x Y:y]];
+        NSArray* row = [_grid getRow:x];
         if ([self allEqualAndNotEmpty:row]) return row;
     }
     return nil;
@@ -69,33 +64,26 @@
 
 - (NSArray*)findWinnerOnColumn {
     for (int y = 0; y < _grid.size; y++) {
-        NSMutableArray*column = [[NSMutableArray alloc] init];
-        for (int x = 0; x < _grid.size; x++) [column addObject:[_grid squareForX:x Y:y]];
+        NSArray* column = [_grid getColumn:y];
         if ([self allEqualAndNotEmpty:column]) return column;
     }
     return nil;
 }
 
 - (NSArray*)findWinnerOnNegativeDiagonal {
-    NSMutableArray* diagonal = [[NSMutableArray alloc] init];
-    for (int i = 0; i < _grid.size; i++) [diagonal addObject:[_grid squareForX:i Y:i]];
+    NSArray* diagonal = [_grid getNegativeSlopeDiagonal];
     if ([self allEqualAndNotEmpty:diagonal]) return diagonal;
     else return nil;
 }
 - (NSArray*)findWinnerOnPositiveDiagonal {
-    NSMutableArray* diagonal = [[NSMutableArray alloc] init];
-    for (int i = 0; i < _grid.size; i++) [diagonal addObject:[_grid squareForX:(_grid.size-1)-i Y:i]];
+    NSArray* diagonal = [_grid getPositiveSlopeDiagonal];
     if ([self allEqualAndNotEmpty:diagonal]) return diagonal;
     else return nil;
 }
 
 - (BOOL)hasEmptySquares {
-    for (int x = 0; x < _grid.size; x++) {
-        for (int y = 0; y < _grid.size; y++) {
-            if ([_grid squareForX:x Y:y].value == NONE) return YES;
-        }
-    }
-    return NO;
+    if ([_grid.emptySquares count] > 0) return YES;
+    else return NO;
 }
 
 - (BOOL)allEqualAndNotEmpty:(NSArray*)squares {
@@ -129,17 +117,15 @@
 }
 
 - (BOOL)blocksOnRow:(Square*)square {
-    for (int y = 0; y < _grid.size; y++) {
-            Square* rowmate = [_grid squareForX:square.x Y:y];
-            if (rowmate == square) continue;
-            else if (rowmate.value != X) return NO;
-        }
+    for (Square* rowmate in [_grid getRow:square.x]) {
+        if (rowmate == square) continue;
+        else if (rowmate.value != X) return NO;
+    }
     return YES;
 }
 
 - (BOOL)blocksOnColumn:(Square*)square {
-    for (int x = 0; x < _grid.size; x++) {
-        Square* columnmate = [_grid squareForX:x Y:square.y];
+    for (Square* columnmate in [_grid getColumn:square.y]) {
         if (columnmate == square) continue;
         else if (columnmate.value != X) return NO;
     }
@@ -148,8 +134,7 @@
 
 - (BOOL)blocksOnNegativeDiagonal:(Square*)square {
     if (![self squareIsOnNegativeDiagonal:square]) return NO;
-    for (int i = 0; i < _grid.size; i++) {
-        Square* diagonalmate = [_grid squareForX:i Y:i];
+    for (Square* diagonalmate in [_grid getNegativeSlopeDiagonal]) {
         if (diagonalmate == square) continue;
         else if (diagonalmate.value != X) return NO;
     }
@@ -158,8 +143,7 @@
 
 - (BOOL)blocksOnPositiveDiagonal:(Square*)square {
     if (![self squareIsOnPositiveDiagonal:square]) return NO;
-    for (int i = 0; i < _grid.size; i++) {
-        Square* diagonalmate = [_grid squareForX:(_grid.size-1)-i Y:i];
+    for (Square* diagonalmate in [_grid getPositiveSlopeDiagonal]) {
         if (diagonalmate == square) continue;
         else if (diagonalmate.value != X) return NO;
     }
@@ -177,8 +161,7 @@
 }
 
 - (BOOL)winsOnRow:(Square*)square {
-    for (int y = 0; y < _grid.size; y++) {
-        Square* rowmate = [_grid squareForX:square.x Y:y];
+    for (Square* rowmate in [_grid getRow:square.x]) {
         if (rowmate == square) continue;
         else if (rowmate.value != O) return NO;
     }
@@ -186,8 +169,7 @@
 }
 
 - (BOOL)winsOnColumn:(Square*)square {
-    for (int x = 0; x < _grid.size; x++) {
-        Square* columnmate = [_grid squareForX:x Y:square.y];
+    for (Square* columnmate in [_grid getColumn:square.y]) {
         if (columnmate == square) continue;
         else if (columnmate.value != O) return NO;
     }
@@ -196,8 +178,7 @@
 
 - (BOOL)winsOnNegativeDiagonal:(Square*)square {
     if (![self squareIsOnNegativeDiagonal:square]) return NO;
-    for (int i = 0; i < _grid.size; i++) {
-        Square* diagonalmate = [_grid squareForX:i Y:i];
+    for (Square* diagonalmate in [_grid getPositiveSlopeDiagonal]) {
         if (diagonalmate == square) continue;
         else if (diagonalmate.value != O) return NO;
     }
@@ -206,8 +187,7 @@
 
 - (BOOL)winsOnPositiveDiagonal:(Square*)square {
     if (![self squareIsOnPositiveDiagonal:square]) return NO;
-    for (int i = 0; i < _grid.size; i++) {
-        Square* diagonalmate = [_grid squareForX:(_grid.size-1)-i Y:i];
+    for (Square* diagonalmate in [_grid getNegativeSlopeDiagonal]) {
         if (diagonalmate == square) continue;
         else if (diagonalmate.value != O) return NO;
     }

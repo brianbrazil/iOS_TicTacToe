@@ -14,4 +14,10 @@
 - (Square*)squareForX:(NSInteger)x Y:(NSInteger)y;
 - (void)setSquare:(Square *)square forX:(NSInteger)x Y:(NSInteger)y;
 
+- (NSArray*)getRow:(NSInteger)x;
+- (NSArray*)getColumn:(NSInteger)y;
+- (NSArray*)getNegativeSlopeDiagonal;
+- (NSArray*)getPositiveSlopeDiagonal;
+
+
 @end

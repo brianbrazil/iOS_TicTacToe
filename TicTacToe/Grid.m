@@ -55,4 +55,31 @@
     _gridSize = MAX(_gridSize, y+1);
 }
 
+#pragma mark Get Rows, Columns, Diagonals
+
+- (NSArray*)getRow:(NSInteger)x {
+    NSMutableArray* row = [[NSMutableArray alloc] init];
+    for (int y = 0; y < _gridSize; y++) [row addObject:[self squareForX:x Y:y]];
+    return row;
+}
+
+- (NSArray*)getColumn:(NSInteger)y {
+    NSMutableArray*column = [[NSMutableArray alloc] init];
+    for (int x = 0; x < _gridSize; x++) [column addObject:[self squareForX:x Y:y]];
+    return column;
+}
+
+- (NSArray*)getNegativeSlopeDiagonal {
+    NSMutableArray* diagonal = [[NSMutableArray alloc] init];
+    for (int i = 0; i < _gridSize; i++) [diagonal addObject:[self squareForX:i Y:i]];
+    return diagonal;
+}
+
+- (NSArray*)getPositiveSlopeDiagonal {
+    NSMutableArray* diagonal = [[NSMutableArray alloc] init];
+    for (int i = 0; i < _gridSize; i++) [diagonal addObject:[self squareForX:(_gridSize-1)-i Y:i]];
+    return diagonal;
+
+}
+
 @end
