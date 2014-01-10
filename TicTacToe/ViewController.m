@@ -52,40 +52,40 @@
     NSArray* candidate;
     if ((candidate = [self findWinnerOnRow]) != nil) return candidate;
     else if ((candidate = [self findWinnerOnColumn]) != nil) return candidate;
-    else if ((candidate = [self findWinnerOnDiagonal]) != nil) return candidate;
+    else if ((candidate = [self findWinnerOnNegativeDiagonal]) != nil) return candidate;
+    else if ((candidate = [self findWinnerOnPositiveDiagonal]) != nil) return candidate;
     else return nil;
 }
 
 - (NSArray*)findWinnerOnRow {
     for (int x = 0; x < 3; x++) {
-        Square* square0 = [self squareForX:x Y:0];
-        Square* square1 = [self squareForX:x Y:1];
-        Square* square2 = [self squareForX:x Y:2];
-        if (square0.value != NONE && square0.value == square1.value && square1.value == square2.value) return [NSArray arrayWithObjects:square0,square1,square2, nil];
+        NSMutableArray* row = [[NSMutableArray alloc] init];
+        for (int y = 0; y < 3; y++) [row addObject:[self squareForX:x Y:y]];
+        if ([self allEqualAndNotEmpty:row]) return row;
     }
     return nil;
 }
 
 - (NSArray*)findWinnerOnColumn {
     for (int y = 0; y < 3; y++) {
-        Square* square0 = [self squareForX:0 Y:y];
-        Square* square1 = [self squareForX:1 Y:y];
-        Square* square2 = [self squareForX:2 Y:y];
-        if (square0.value != NONE && square0.value == square1.value && square1.value == square2.value) return [NSArray arrayWithObjects:square0,square1,square2, nil];
+        NSMutableArray*column = [[NSMutableArray alloc] init];
+        for (int x = 0; x < 3; x++) [column addObject:[self squareForX:x Y:y]];
+        if ([self allEqualAndNotEmpty:column]) return column;
     }
     return nil;
 }
 
-- (NSArray*)findWinnerOnDiagonal {
-        Square* square0 = [self squareForX:0 Y:0];
-        Square* square1 = [self squareForX:1 Y:1];
-        Square* square2 = [self squareForX:2 Y:2];
-        if (square0.value != NONE && square0.value == square1.value && square1.value == square2.value) return [NSArray arrayWithObjects:square0,square1,square2, nil];
-        square0 = [self squareForX:2 Y:0];
-        square1 = [self squareForX:1 Y:1];
-        square2 = [self squareForX:0 Y:2];
-        if (square0.value != NONE && square0.value == square1.value && square1.value == square2.value) return [NSArray arrayWithObjects:square0,square1,square2, nil];
-        else return nil;
+- (NSArray*)findWinnerOnNegativeDiagonal {
+    NSMutableArray* diagonal = [[NSMutableArray alloc] init];
+    for (int i = 0; i < 3; i++) [diagonal addObject:[self squareForX:i Y:i]];
+    if ([self allEqualAndNotEmpty:diagonal]) return diagonal;
+    else return nil;
+}
+- (NSArray*)findWinnerOnPositiveDiagonal {
+    NSMutableArray* diagonal = [[NSMutableArray alloc] init];
+    for (int i = 0; i < 3; i++) [diagonal addObject:[self squareForX:(3-1)-i Y:i]];
+    if ([self allEqualAndNotEmpty:diagonal]) return diagonal;
+    else return nil;
 }
 
 - (BOOL)hasEmptySquares {
@@ -97,6 +97,16 @@
     return NO;
 }
 
+- (BOOL)allEqualAndNotEmpty:(NSArray*)squares {
+    Square* reference = [squares objectAtIndex:0];
+    if (reference.value == NONE) return NO;
+    for (Square* square in squares) {
+        if (square.value != reference.value) return NO;
+    }
+    return YES;
+}
+
+
 #pragma mark Choose a Square
 
 -(Square*)chooseSquare {
@@ -107,15 +117,15 @@
 
 -(Square*)findBlocker {
     for (Square* square in [self emptySquares]) {
-        if ([self squareBlocksOnRow:square]) return square;
-        if ([self squareBlocksOnColumn:square]) return square;
-        if ([self squareBlocksOnNegativeDiagonal:square]) return square;
-        if ([self squareBlocksOnPositiveDiagonal:square]) return square;
+        if ([self blocksOnRow:square]) return square;
+        if ([self blocksOnColumn:square]) return square;
+        if ([self blocksOnNegativeDiagonal:square]) return square;
+        if ([self blocksOnPositiveDiagonal:square]) return square;
     }
     return nil;
 }
 
-- (BOOL)squareBlocksOnRow:(Square*)square {
+- (BOOL)blocksOnRow:(Square*)square {
     for (int y = 0; y < 3; y++) {
             Square* rowmate = [self squareForX:square.x Y:y];
             if (rowmate == square) continue;
@@ -124,7 +134,7 @@
     return YES;
 }
 
-- (BOOL)squareBlocksOnColumn:(Square*)square {
+- (BOOL)blocksOnColumn:(Square*)square {
     for (int x = 0; x < 3; x++) {
         Square* columnmate = [self squareForX:x Y:square.y];
         if (columnmate == square) continue;
@@ -133,7 +143,7 @@
     return YES;
 }
 
-- (BOOL)squareBlocksOnNegativeDiagonal:(Square*)square {
+- (BOOL)blocksOnNegativeDiagonal:(Square*)square {
     if (![self squareIsOnNegativeDiagonal:square]) return NO;
     for (int i = 0; i < 3; i++) {
         Square* diagonalmate = [self squareForX:i Y:i];
@@ -143,10 +153,10 @@
     return YES;
 }
 
-- (BOOL)squareBlocksOnPositiveDiagonal:(Square*)square {
+- (BOOL)blocksOnPositiveDiagonal:(Square*)square {
     if (![self squareIsOnPositiveDiagonal:square]) return NO;
-    for (int y = 0; y < 3; y++) {
-        Square* diagonalmate = [self squareForX:(3-1)-y Y:y];
+    for (int i = 0; i < 3; i++) {
+        Square* diagonalmate = [self squareForX:(3-1)-i Y:i];
         if (diagonalmate == square) continue;
         else if (diagonalmate.value == O || diagonalmate.value == NONE) return NO;
     }
