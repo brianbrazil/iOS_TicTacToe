@@ -10,4 +10,7 @@ typedef enum {
 
 @property (nonatomic) Value value;
 
+@property (nonatomic) NSInteger x;
+@property (nonatomic) NSInteger y;
+
 @end
