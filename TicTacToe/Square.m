@@ -5,9 +5,11 @@
 
 -(void)setValue:(Value)value {
     _value = value;
-    [self setBackgroundImage:[self getImageForValue:value] forState:UIControlStateNormal];
-    if (value == NONE) self.enabled = YES;
-    else self.enabled = NO;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self setBackgroundImage:[self getImageForValue:value] forState:UIControlStateNormal];
+        if (value == NONE) self.enabled = YES;
+        else self.enabled = NO;
+    });
 }
 
 #pragma mark Private Methods
