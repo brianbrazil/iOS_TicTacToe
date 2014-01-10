@@ -2,7 +2,7 @@
 
 @class Square;
 
-@interface ViewController : UIViewController <UIAlertViewDelegate>
+@interface iPhoneViewController : UIViewController <UIAlertViewDelegate>
 
 
 @property (weak, nonatomic) IBOutlet Square* square_0_0;

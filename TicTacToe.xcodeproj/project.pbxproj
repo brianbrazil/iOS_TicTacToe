@@ -20,7 +20,7 @@
 		EDD20575B4C9FDDDE046D407 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDD209F70A32202783E50721 /* Main_iPad.storyboard */; };
 		EDD20593B2CF0635666B3588 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EDD20B8E022752B4F7EAF2B7 /* main.m */; };
 		EDD2068EC7B4DBA33B5679FD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDD20059FD7959B1D9120342 /* CoreGraphics.framework */; };
-		EDD20809E7AA444371E5DD7B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDD204DE4FCE55B63B542A8B /* ViewController.m */; };
+		EDD20809E7AA444371E5DD7B /* iPhoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDD204DE4FCE55B63B542A8B /* iPhoneViewController.m */; };
 		EDD209C76F761649773F4061 /* X3.png in Resources */ = {isa = PBXBuildFile; fileRef = EDD203D2A759CE1E74D60509 /* X3.png */; };
 		EDD209DD4902FDC84DC16114 /* board.png in Resources */ = {isa = PBXBuildFile; fileRef = EDD20314B75CF8F0B336CA28 /* board.png */; };
 		EDD209E9BFCAAA71FE733F99 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDD202AE8A7269F3074920D1 /* Main_iPhone.storyboard */; };
@@ -54,11 +54,11 @@
 		EDD20314B75CF8F0B336CA28 /* board.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = board.png; sourceTree = "<group>"; };
 		EDD203D2A759CE1E74D60509 /* X3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = X3.png; sourceTree = "<group>"; };
 		EDD204CBF6BF99CD48A4DE69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		EDD204DE4FCE55B63B542A8B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EDD204DE4FCE55B63B542A8B /* iPhoneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iPhoneViewController.m; sourceTree = "<group>"; };
 		EDD20686D5ED7E0FA82498C7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		EDD206A10AC2F900DD4C432F /* TicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDD206A3D52AB5B93D54206D /* O1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = O1.png; sourceTree = "<group>"; };
-		EDD2070BE4EDB4440A39A4E0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		EDD2070BE4EDB4440A39A4E0 /* iPhoneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iPhoneViewController.h; sourceTree = "<group>"; };
 		EDD207255CF8B334ABAC80BC /* O3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = O3.png; sourceTree = "<group>"; };
 		EDD20726F4F0129A28CFBBC8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EDD208A84C00991B7C4A6EBE /* TicTacToeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicTacToeTests.m; sourceTree = "<group>"; };
@@ -148,8 +148,8 @@
 				EDD209C13D08CA6D23B724F2 /* Images.xcassets */,
 				EDD202AE8A7269F3074920D1 /* Main_iPhone.storyboard */,
 				EDD209F70A32202783E50721 /* Main_iPad.storyboard */,
-				EDD2070BE4EDB4440A39A4E0 /* ViewController.h */,
-				EDD204DE4FCE55B63B542A8B /* ViewController.m */,
+				EDD2070BE4EDB4440A39A4E0 /* iPhoneViewController.h */,
+				EDD204DE4FCE55B63B542A8B /* iPhoneViewController.m */,
 				EDD204180433BDE93FF30CEC /* images */,
 				EDD20C0DE4094FBD1ABABC4D /* Square.m */,
 				EDD20DB5802664029E241077 /* Square.h */,
@@ -299,7 +299,7 @@
 			files = (
 				EDD20593B2CF0635666B3588 /* main.m in Sources */,
 				EDD2040FEBA555C65B7FBC29 /* AppDelegate.m in Sources */,
-				EDD20809E7AA444371E5DD7B /* ViewController.m in Sources */,
+				EDD20809E7AA444371E5DD7B /* iPhoneViewController.m in Sources */,
 				EDD2030C6735C95A7CCE3BAF /* Square.m in Sources */,
 				EDD20AB855ED5C042EDF1571 /* Grid.m in Sources */,
 				EDD20C146060D38DE2BD34DD /* GameLogic.m in Sources */,

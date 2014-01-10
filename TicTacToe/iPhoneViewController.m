@@ -1,8 +1,8 @@
-#import "ViewController.h"
+#import "iPhoneViewController.h"
 #import "Square.h"
 #import "GameLogic.h"
 
-@implementation ViewController {
+@implementation iPhoneViewController {
     GameLogic*_game;
 }
 
