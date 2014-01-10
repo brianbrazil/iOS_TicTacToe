@@ -8,12 +8,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self createGrid];
+    [self setupGame];
 }
 
 #pragma mark Create & Reset
 
-- (void)createGrid {
+- (void)setupGame {
     _game = [[GameLogic alloc] init];
     [_game setSquare:_square_0_0 forX:0 Y:0];
     [_game setSquare:_square_0_1 forX:0 Y:1];
