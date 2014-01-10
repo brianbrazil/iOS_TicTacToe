@@ -133,7 +133,7 @@
     for (int y = 0; y < GRID_SIZE; y++) {
             Square* rowmate = [self squareForX:square.x Y:y];
             if (rowmate == square) continue;
-            else if (rowmate.value == O || rowmate.value == NONE) return NO;
+            else if (rowmate.value != X) return NO;
         }
     return YES;
 }
@@ -142,7 +142,7 @@
     for (int x = 0; x < GRID_SIZE; x++) {
         Square* columnmate = [self squareForX:x Y:square.y];
         if (columnmate == square) continue;
-        else if (columnmate.value == O || columnmate.value == NONE) return NO;
+        else if (columnmate.value != X) return NO;
     }
     return YES;
 }
@@ -152,7 +152,7 @@
     for (int i = 0; i < GRID_SIZE; i++) {
         Square* diagonalmate = [self squareForX:i Y:i];
         if (diagonalmate == square) continue;
-        else if (diagonalmate.value == O || diagonalmate.value == NONE) return NO;
+        else if (diagonalmate.value != X) return NO;
     }
     return YES;
 }
@@ -162,7 +162,7 @@
     for (int i = 0; i < GRID_SIZE; i++) {
         Square* diagonalmate = [self squareForX:(GRID_SIZE-1)-i Y:i];
         if (diagonalmate == square) continue;
-        else if (diagonalmate.value == O || diagonalmate.value == NONE) return NO;
+        else if (diagonalmate.value != X) return NO;
     }
     return YES;
 }
@@ -181,7 +181,7 @@
     for (int y = 0; y < GRID_SIZE; y++) {
         Square* rowmate = [self squareForX:square.x Y:y];
         if (rowmate == square) continue;
-        else if (rowmate.value == X || rowmate.value == NONE) return NO;
+        else if (rowmate.value != O) return NO;
     }
     return YES;
 }
@@ -190,7 +190,7 @@
     for (int x = 0; x < GRID_SIZE; x++) {
         Square* columnmate = [self squareForX:x Y:square.y];
         if (columnmate == square) continue;
-        else if (columnmate.value == X || columnmate.value == NONE) return NO;
+        else if (columnmate.value != O) return NO;
     }
     return YES;
 }
@@ -200,7 +200,7 @@
     for (int i = 0; i < GRID_SIZE; i++) {
         Square* diagonalmate = [self squareForX:i Y:i];
         if (diagonalmate == square) continue;
-        else if (diagonalmate.value == X || diagonalmate.value == NONE) return NO;
+        else if (diagonalmate.value != O) return NO;
     }
     return YES;
 }
@@ -210,7 +210,7 @@
     for (int i = 0; i < GRID_SIZE; i++) {
         Square* diagonalmate = [self squareForX:(GRID_SIZE-1)-i Y:i];
         if (diagonalmate == square) continue;
-        else if (diagonalmate.value == X || diagonalmate.value == NONE) return NO;
+        else if (diagonalmate.value != O) return NO;
     }
     return YES;
 }
