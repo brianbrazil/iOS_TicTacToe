@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		266B4BD61884114700C5F67D /* icon_60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 266B4BD31884114700C5F67D /* icon_60@2x.png */; };
+		266B4BD71884114700C5F67D /* icon40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 266B4BD41884114700C5F67D /* icon40@2x.png */; };
+		266B4BD81884114700C5F67D /* icon29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 266B4BD51884114700C5F67D /* icon29@2x.png */; };
 		EDD2003EE7AAFC09B492486F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDD204F78E38E721C06ABC7A /* InfoPlist.strings */; };
 		EDD201A08BA2E6EC624A091E /* O3.png in Resources */ = {isa = PBXBuildFile; fileRef = EDD207255CF8B334ABAC80BC /* O3.png */; };
 		EDD2021895B8C23BA2771E64 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDD209C13D08CA6D23B724F2 /* Images.xcassets */; };
@@ -45,6 +48,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		266B4BD31884114700C5F67D /* icon_60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_60@2x.png"; sourceTree = "<group>"; };
+		266B4BD41884114700C5F67D /* icon40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon40@2x.png"; sourceTree = "<group>"; };
+		266B4BD51884114700C5F67D /* icon29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon29@2x.png"; sourceTree = "<group>"; };
 		EDD20059FD7959B1D9120342 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		EDD20076536EA1F2C48F2463 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EDD201CC19FCD8F05F675B68 /* TicTacToe-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TicTacToe-Prefix.pch"; sourceTree = "<group>"; };
@@ -104,6 +110,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		266B4BD21884112800C5F67D /* AppIcons */ = {
+			isa = PBXGroup;
+			children = (
+				266B4BD31884114700C5F67D /* icon_60@2x.png */,
+				266B4BD41884114700C5F67D /* icon40@2x.png */,
+				266B4BD51884114700C5F67D /* icon29@2x.png */,
+			);
+			name = AppIcons;
+			sourceTree = "<group>";
+		};
 		EDD202466AFA8BD7A60DA363 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +144,7 @@
 		EDD204180433BDE93FF30CEC /* images */ = {
 			isa = PBXGroup;
 			children = (
+				266B4BD21884112800C5F67D /* AppIcons */,
 				EDD20F0389BFBD7626B0A20F /* X1.png */,
 				EDD207255CF8B334ABAC80BC /* O3.png */,
 				EDD20314B75CF8F0B336CA28 /* board.png */,
@@ -276,7 +293,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				266B4BD71884114700C5F67D /* icon40@2x.png in Resources */,
 				EDD203B883FA42A071F23114 /* InfoPlist.strings in Resources */,
+				266B4BD61884114700C5F67D /* icon_60@2x.png in Resources */,
 				EDD2021895B8C23BA2771E64 /* Images.xcassets in Resources */,
 				EDD209E9BFCAAA71FE733F99 /* Main_iPhone.storyboard in Resources */,
 				EDD20575B4C9FDDDE046D407 /* Main_iPad.storyboard in Resources */,
@@ -286,6 +305,7 @@
 				EDD20E456CA61265C04403FA /* O1.png in Resources */,
 				EDD20424FDBA54A29A6C65AE /* X2.png in Resources */,
 				EDD209C76F761649773F4061 /* X3.png in Resources */,
+				266B4BD81884114700C5F67D /* icon29@2x.png in Resources */,
 				EDD20DBF13F40919003A90D8 /* O2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,6 +520,7 @@
 				EDD207E35B2968908595D9C6 /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EDD2056F53484A518A9FBB09 /* Build configuration list for PBXProject "TicTacToe" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +538,7 @@
 				EDD205E4146A1294DB7CE4EB /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
