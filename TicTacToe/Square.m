@@ -22,19 +22,19 @@
 
 -(UIImage*)getXImage {
     switch (rand() % 3) {
+        default:
         case 0: return [UIImage imageNamed:@"X1.png"];
         case 1: return [UIImage imageNamed:@"X2.png"];
         case 2: return [UIImage imageNamed:@"X3.png"];
-        default: return [UIImage imageNamed:@"X1.png"];
     }
 }
 
 -(UIImage*)getOImage {
     switch (rand() % 3) {
+        default:
         case 0: return [UIImage imageNamed:@"O1.png"];
         case 1: return [UIImage imageNamed:@"O2.png"];
         case 2: return [UIImage imageNamed:@"O3.png"];
-        default: return [UIImage imageNamed:@"O1.png"];
     }
 }
 
